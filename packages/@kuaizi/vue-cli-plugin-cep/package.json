@@ -1,6 +1,6 @@
 {
   "name": "@kuaizi/vue-cli-plugin-cep",
-  "version": "0.0.4-alpha.0",
+  "version": "0.0.5-alpha.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "kuaizi-co",
   "license": "MIT",
   "dependencies": {
-    "@kuaizi/webpack-plugin-cep-link": "^0.0.4-alpha.0"
+    "@kuaizi/webpack-plugin-cep-link": "^0.0.5-alpha.0"
   },
   "gitHead": "d9506d95dec333d756e378b08ebb9e2f7dbe0f12"
 }
