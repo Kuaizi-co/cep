@@ -1,13 +1,23 @@
 
+<template>
+  <bw :title="title">
+    <slot />
+  </bw>
+</template>
+
 <script>
+import 'vue-windows/dist/vue-windows.css'
 import { BrowserWindow } from 'vue-windows'
 export default {
-  extends: BrowserWindow,
-  created () {
-    console.log('window', BrowserWindow)
+  props: {
+    title: {
+      required: true,
+      type: String
+    }
+  },
+  components: {
+    bw: BrowserWindow
   }
 }
 </script>
 
-
-<style src="vue-windows/dist/vue-windows.css"></style>
