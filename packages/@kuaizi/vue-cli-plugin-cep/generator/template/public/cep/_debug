@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+  <Extension Id="<%= options.ID %>">
+    <HostList>
+      <Host Name="PHSP" Port="<%= options.port %>" />
+      <Host Name="PHXS" Port="<%= options.port %>" />
+    </HostList>
+  </Extension>
+</ExtensionList>

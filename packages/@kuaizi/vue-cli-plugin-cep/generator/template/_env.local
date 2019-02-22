@@ -1,0 +1,4 @@
+# @kuaizi/vue-cli-plugin-cep
+VUE_APP_CEP_ID=<%= options.ID %>
+VUE_APP_CEP_DEBUG=true
+VUE_APP_CEP_PORT=<%= options.port %>

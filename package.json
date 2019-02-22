@@ -1,0 +1,15 @@
+{
+  "name": "cep",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap --hoist",
+    "docs": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "sh deploy.sh"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.13.0",
+    "vuepress": "^1.0.0-alpha.39"
+  }
+}
