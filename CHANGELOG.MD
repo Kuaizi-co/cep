@@ -4,7 +4,9 @@ website: https://github.com/kuaizi-co/cep
 
 # cep
 
-## Fly Sword 百步飞剑
+## 1.0.0 (2019-2-22)
+
+### Fly Sword 百步飞剑
 
 基于 `vue cli 3.x` 工具的 `cep` 插件模板
 
