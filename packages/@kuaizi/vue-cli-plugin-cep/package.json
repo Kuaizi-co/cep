@@ -12,5 +12,8 @@
   "dependencies": {
     "@kuaizi/webpack-plugin-cep-link": "^0.0.5-alpha.0"
   },
-  "gitHead": "d9506d95dec333d756e378b08ebb9e2f7dbe0f12"
+  "gitHead": "5da548822b571c1c66224b706a0ac00bc8bfb53b",
+  "publishConfig": {
+    "access": "public"
+  }
 }
