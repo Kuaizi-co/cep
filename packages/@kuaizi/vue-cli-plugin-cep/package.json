@@ -11,5 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "@kuaizi/webpack-plugin-cep-link": "^0.0.2-alpha.0"
-  }
+  },
+  "gitHead": "5b185dc8f22e49444e4127be10804e6d7e37aedb"
 }
