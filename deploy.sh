@@ -9,6 +9,9 @@ cp -r changelog dist/changelog
 
 cd dist
 
+git config --global user.email "tomieric@gmail.com"
+git config --global user.name "tomieric"
+
 git init
 
 git add -A
