@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ExtensionList>
-  <Extension Id="com.kuaizi.pcp.pcm.cep">
-    <HostList>
-      <Host Name="PHSP" Port="9800" />
-      <Host Name="PHXS" Port="9800" />
-    </HostList>
-  </Extension>
-</ExtensionList>
