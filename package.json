@@ -1,6 +1,5 @@
 {
   "name": "cep",
-  "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
     "docs": "vuepress dev docs",
@@ -45,5 +44,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

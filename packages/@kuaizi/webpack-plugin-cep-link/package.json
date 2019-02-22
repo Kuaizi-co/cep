@@ -1,6 +1,6 @@
 {
   "name": "@kuaizi/webpack-plugin-cep-link",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.6-alpha.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,5 +13,9 @@
     "assert": "^1.4.1",
     "chalk": "^2.4.2",
     "opn": "^5.4.0"
+  },
+  "gitHead": "5da548822b571c1c66224b706a0ac00bc8bfb53b",
+  "publishConfig": {
+    "access": "public"
   }
 }
