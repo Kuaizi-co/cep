@@ -5,11 +5,45 @@
     "bootstrap": "lerna bootstrap --hoist",
     "docs": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "commit": "git-cz"
   },
   "license": "MIT",
   "devDependencies": {
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.14.1",
+    "eslint-config-standard": "^12.0.0",
     "lerna": "^3.13.0",
+    "prettier": "^1.16.4",
+    "vue-windows": "^0.3.0",
     "vuepress": "^1.0.0-alpha.39"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": "standard"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "packages/@kuaizi/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
