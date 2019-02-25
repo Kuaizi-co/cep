@@ -12,4 +12,6 @@ website: https://github.com/kuaizi-co/cep
 
 提供 `webpack` 的 `symlink-cep` 插件
 
+增加文档
+
 
