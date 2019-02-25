@@ -18,6 +18,12 @@
 > npx lerna add assert --scope=@kuaizi/webpack-plugin-cep-link
 ```
 
+## release
+
+``` bash
+npx lerna publish
+```
+
 ## about React
 
 You can use it. [https://github.com/fusepilot/create-cep-extension](https://github.com/fusepilot/create-cep-extension)
