@@ -25,7 +25,7 @@ module.exports = {
         nav: [
           { text: '指南', link: '/guide/' },
           { text: '配置', link: '/config/' },
-          { text: 'ChangeLog', link: '/changelog/' }
+          { text: 'ChangeLog', link: '//kuaizi-co.github.io/cep/changelog/' }
         ],
         sidebar:  [
           ['/guide/', '指南'],
@@ -37,7 +37,7 @@ module.exports = {
         nav: [
           { text: 'Guide', link: '/guide/' },
           { text: 'Config', link: '/config/' },
-          { text: 'ChangeLog', link: '/changelog/' }
+          { text: 'ChangeLog', link: '//kuaizi-co.github.io/cep/changelog/' }
         ],
         sidebar: {
           '/guide/': [
