@@ -43,7 +43,9 @@ export default {
   },
   methods: {
     testScript () {
-      this.$csInterface.evalScript('testScript()')
+      this.$csInterface.evalScript('psAction.testScript()', result => {
+        if (result !== 'undefined') console.error(result)
+      })
     },
     openInNewTab () {
       this.$csInterface.openURLInDefaultBrowser('https://github.com/kuaizi-co/cep')

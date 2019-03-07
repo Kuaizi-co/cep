@@ -27,7 +27,7 @@ const getSymlinkExtensionPath = (cepId) => {
 
 // 创建cep插件软链
 const symlinkExtension = (path, BUNDLE_ID) => {
-  fs.ensureDirSync(getExtensionPath())
+  fs.emptyDirSync(getExtensionPath())
   let target = getSymlinkExtensionPath(BUNDLE_ID)
   fs.removeSync(target)
   if (process.platform === 'win32') {
@@ -66,16 +66,14 @@ const openChromeRemoteDebugger = (port = 8089) => {
 const createBuilderCEP = (outPath, assets, cid) => {
   const destFolder = `./${cid}`
   return () => {
-    fs.ensureDirSync(destFolder)
-    fs.removeSync(destFolder)
-    fs.ensureDirSync(destFolder)
+    fs.emptyDirSync(destFolder)
     fs.copySync(path.join(outPath, assets), destFolder)
     fs.copySync(outPath, destFolder, {
       filter: src => {
         return !~src.indexOf(path.join(outPath, assets))
       }
     })
-    console.log(chalk.green.bold(`🌈 Build ${cid} succeed`))
+    console.log(chalk.green.bold(`🌈 Build ${cid} succeed !`))
   }
 }
 

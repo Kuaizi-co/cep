@@ -106,3 +106,5 @@ gh-pages/
 example/dist
 
 packages/test
+
+package-lock.json

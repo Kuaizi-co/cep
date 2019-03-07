@@ -1,6 +1,7 @@
 {
+  "lerna": "1.0.0",
   "packages": [
     "packages/@kuaizi/*"
   ],
-  "version": "1.0.0"
+  "version": "independent"
 }

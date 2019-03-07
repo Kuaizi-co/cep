@@ -54,4 +54,6 @@
             </DispatchInfo>
         </Extension>
     </DispatchInfoList>
+    <Author>tomieric</Author> <!-- 作者信息-->
+    <Abstract>tomieric, kuaizi.ai</Abstract> <!-- 扩展描述-->
 </ExtensionManifest>
