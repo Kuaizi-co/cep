@@ -27,7 +27,7 @@ const getSymlinkExtensionPath = (cepId) => {
 
 // 创建cep插件软链
 const symlinkExtension = (path, BUNDLE_ID) => {
-  fs.emptyDirSync(getExtensionPath())
+  // fs.emptyDirSync(getExtensionPath())
   let target = getSymlinkExtensionPath(BUNDLE_ID)
   fs.removeSync(target)
   if (process.platform === 'win32') {
