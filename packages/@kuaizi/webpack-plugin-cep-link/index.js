@@ -37,10 +37,11 @@ class webpackPluginCepLink {
     const runInitCEP = () => {
       let isInit = false
       return () => {
-        if (isInit) return
-        this.debug && openChromeRemoteDebugger(this.port)
-        symlinkExtension(pluginPath, this.cepId)
-        isInit = true
+        if (!isInit) {
+          this.debug && openChromeRemoteDebugger(this.port)
+          symlinkExtension(pluginPath, this.cepId)
+          isInit = true
+        }
       }
     }
 
