@@ -39,7 +39,11 @@ class webpackPluginCepLink {
       return () => {
         if (!isInit) {
           this.debug && openChromeRemoteDebugger(this.port)
-          symlinkExtension(pluginPath, this.cepId)
+          try {
+            symlinkExtension(pluginPath, this.cepId)
+          } catch (e) {
+            // symlink is exit
+          }
           isInit = true
         }
       }
