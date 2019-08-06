@@ -13,7 +13,8 @@ module.exports = api => {
             cepFolderName: 'cep',
             cepId: process.env.VUE_APP_CEP_ID,
             isDebug: process.env.VUE_APP_CEP_DEBUG === 'false' ? false : true,
-            port: process.env.VUE_APP_CEP_PORT
+            port: process.env.VUE_APP_CEP_PORT,
+            build: process.env.VUE_APP_CEP_BUILD === 'false' ? false : true
           }))
   })
 }

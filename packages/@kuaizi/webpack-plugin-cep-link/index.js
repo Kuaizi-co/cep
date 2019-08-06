@@ -10,12 +10,20 @@ const {
 const pluginName = Symbol('webpackPluginCepLink')
 
 class webpackPluginCepLink {
-  constructor ({ assets = '', cepId = 'my.cep.extension', cepFolderName = 'cep', isDebug = false, port = '' } = {}) {
+  constructor ({
+    assets = '',
+    cepId = 'my.cep.extension',
+    cepFolderName = 'cep',
+    isDebug = false,
+    port = '',
+    build = true
+  } = {}) {
     this.assets = assets
     this.cepId = cepId
     this.cepFolderName = cepFolderName
     this.debug = isDebug
     this.port = port
+    this.build = build
 
     assert(assets, chalk.red.bold(`webpack-plugin-cep-link assets about options is required!!!`))
     if (isDebug && !port) {
@@ -55,7 +63,7 @@ class webpackPluginCepLink {
     }
 
     // build
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && this.build) {
       const { output } = compiler.options
       if (compiler.hooks) {
         compiler.hooks.done.tap(pluginName.toString(), createBuilderCEP(output.path, this.cepFolderName, this.cepId))
