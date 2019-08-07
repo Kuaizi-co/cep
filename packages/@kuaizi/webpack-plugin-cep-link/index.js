@@ -20,14 +20,16 @@ class webpackPluginCepLink {
     build = true
   } = {}) {
     this.assets = assets
-    this.cepId = cepId
+    this.cepId = cepIdy
     this.cepFolderName = cepFolderName
     this.debug = isDebug
     this.port = port
     this.build = build
 
+    this.isProd = process.env.NODE_ENV === 'production'
+
     // 启用debug
-    if (!isProd){
+    if (!this.isProd){
       assert(assets, chalk.red.bold(`webpack-plugin-cep-link assets about options is required!!!`))
       if (isDebug && !port) {
         console.log(chalk.red.bold(`the debugger mode need to set port!!!`))
@@ -61,12 +63,12 @@ class webpackPluginCepLink {
     }
 
     // dev
-    if (!isProd) {
+    if (!this.isProd) {
       compiler.hooks.done.tap(pluginName.toString(), runInitCEP())
     }
 
     // build
-    if (isProd && this.build) {
+    if (this.isProd && this.build) {
       const { output } = compiler.options
       if (compiler.hooks) {
         compiler.hooks.done.tap(pluginName.toString(), createBuilderCEP(output.path, this.cepFolderName, this.cepId))
