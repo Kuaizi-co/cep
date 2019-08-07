@@ -8,6 +8,7 @@ const {
   createBuilderCEP
 } = require('./utils')
 const pluginName = Symbol('webpackPluginCepLink')
+const isProd = process.env.NODE_ENV === 'production'
 
 class webpackPluginCepLink {
   constructor ({
@@ -25,12 +26,14 @@ class webpackPluginCepLink {
     this.port = port
     this.build = build
 
-    assert(assets, chalk.red.bold(`webpack-plugin-cep-link assets about options is required!!!`))
-    if (isDebug && !port) {
-      console.log(chalk.red.bold(`the debugger mode need to set port!!!`))
-    }
     // 启用debug
-    enablePlayerDebugMode ()
+    if (!isProd){
+      assert(assets, chalk.red.bold(`webpack-plugin-cep-link assets about options is required!!!`))
+      if (isDebug && !port) {
+        console.log(chalk.red.bold(`the debugger mode need to set port!!!`))
+      }
+      enablePlayerDebugMode ()
+    }
 
     // 启用chrome debugger
     // isDebug && process.env.NODE_ENV === 'development' && openChromeRemoteDebugger(port)
@@ -58,12 +61,12 @@ class webpackPluginCepLink {
     }
 
     // dev
-    if (process.env.NODE_ENV === 'development') {
+    if (!isProd) {
       compiler.hooks.done.tap(pluginName.toString(), runInitCEP())
     }
 
     // build
-    if (process.env.NODE_ENV === 'production' && this.build) {
+    if (isProd && this.build) {
       const { output } = compiler.options
       if (compiler.hooks) {
         compiler.hooks.done.tap(pluginName.toString(), createBuilderCEP(output.path, this.cepFolderName, this.cepId))
