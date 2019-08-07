@@ -20,7 +20,7 @@ class webpackPluginCepLink {
     build = true
   } = {}) {
     this.assets = assets
-    this.cepId = cepIdy
+    this.cepId = cepId
     this.cepFolderName = cepFolderName
     this.debug = isDebug
     this.port = port
