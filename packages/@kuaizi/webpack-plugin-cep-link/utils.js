@@ -41,15 +41,11 @@ const symlinkExtension = (path, BUNDLE_ID) => {
 // https://github.com/fusepilot/parcel-plugin-cep/blob/master/src/utils.js#L18
 const enablePlayerDebugMode = () => {
   if (process.platform === 'win32') {
-    execSync(`
-      REG ADD HKCU\\Software\\Adobe\\CSXS.8 /f /v PlayerDebugMode /t REG_SZ /d 1;
-      REG ADD HKCU\\Software\\Adobe\\CSXS.8 /f /v LogLevel /t REG_SZ /d 6;
-    `)
+    execSync('REG ADD HKCU\\Software\\Adobe\\CSXS.8 /f /v PlayerDebugMode /t REG_SZ /d 1');
+    execSync('REG ADD HKCU\\Software\\Adobe\\CSXS.8 /f /v LogLevel /t REG_SZ /d 6');
   } else {
-    execSync(`
-      defaults write com.adobe.CSXS.8 PlayerDebugMode 1;
-      defaults write com.adobe.CSXS.8 LogLevel 6;
-    `)
+    execSync('defaults write com.adobe.CSXS.8 PlayerDebugMode 1');
+    execSync('defaults write com.adobe.CSXS.8 LogLevel 6');
   }
 }
 
